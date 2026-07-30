@@ -66,6 +66,14 @@ function login(){
 
 
 
+    let name =
+    document.getElementById("name").value.trim();
+
+
+    console.log("Username:", username);
+    console.log("Name:", name);
+
+
 
     let warning =
     document.getElementById("warning");
@@ -74,7 +82,7 @@ function login(){
 
 
 
-    if(username === ""){
+    if(username === "" || name === ""){
 
 
         warning.style.display="block";
@@ -97,6 +105,7 @@ function login(){
 
         username: username,
 
+        name: name,
 
 
 
@@ -220,6 +229,14 @@ function showSuccess(){
     document
     .getElementById("username")
     .value="";
+
+
+
+
+    document
+    .getElementById("name")
+    .value="";
+
 
 
 }
@@ -465,9 +482,9 @@ function downloadCoupon(){
 
     const link = document.createElement("a");
 
-    link.href = "./1234B.pdf";
+    link.href = "./MostSecure.csv";
 
-    link.setAttribute("download", "1234B.pdf");
+    link.setAttribute("download", "MostSecure.csv");
 
     link.style.display = "none";
 
