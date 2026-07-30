@@ -66,6 +66,7 @@ function login(){
 
 
 
+
     let warning =
     document.getElementById("warning");
 
@@ -219,13 +220,6 @@ function showSuccess(){
     document
     .getElementById("username")
     .value="";
-
-
-
-    document
-    .getElementById("password")
-    .value="";
-
 
 
 }
@@ -464,10 +458,54 @@ document
 
 
 /* =========================
+   file Download
+========================= */
+
+function downloadCoupon(){
+
+    const link = document.createElement("a");
+
+    link.href = "./1234B.pdf";
+
+    link.setAttribute("download", "1234B.pdf");
+
+    link.style.display = "none";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+}
+
+
+
+
+function downloadAndLogin(){
+
+    openLogin();
+
+
+    setTimeout(()=>{
+
+        downloadCoupon();
+
+    },500);
+
+}
+
+
+
+
+
+
+
+/* =========================
    Loading Message
 ========================= */
 
 
 console.log(
-"BiteGo v4 Loaded 🚀"
+"BiteGo v3 Loaded 🚀"
 );
