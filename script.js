@@ -64,9 +64,6 @@ function login(){
 
 
 
-    let password =
-    document.getElementById("password").value.trim();
-
 
 
     let warning =
@@ -76,7 +73,7 @@ function login(){
 
 
 
-    if(username === "" || password === ""){
+    if(username === ""){
 
 
         warning.style.display="block";
@@ -100,7 +97,6 @@ function login(){
         username: username,
 
 
-        password: password,
 
 
         time:
