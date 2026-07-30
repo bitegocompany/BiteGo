@@ -1,5 +1,5 @@
 /* =========================
-   BiteGo v3 Premium Style FIXED
+   BiteGo v4 Premium Style
 ========================= */
 
 
@@ -28,7 +28,7 @@ body{
 
 
 /* =========================
- Header
+ HEADER
 ========================= */
 
 
@@ -36,12 +36,15 @@ header{
 
     position:sticky;
     top:0;
+
     z-index:1000;
 
     height:90px;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:0 80px;
@@ -59,6 +62,7 @@ header{
 .logo{
 
     font-size:42px;
+
     font-weight:900;
 
 }
@@ -75,10 +79,10 @@ footer span,
 
 
 
-
 nav{
 
     display:flex;
+
     gap:35px;
 
 }
@@ -88,11 +92,15 @@ nav{
 nav a{
 
     text-decoration:none;
+
     color:#061C46;
+
     font-size:18px;
+
     transition:.3s;
 
 }
+
 
 
 nav a:hover{
@@ -106,7 +114,6 @@ nav a:hover{
 
 
 
-
 /* =========================
  HERO
 ========================= */
@@ -114,37 +121,58 @@ nav a:hover{
 
 .hero{
 
+
     min-height:85vh;
 
+
     display:flex;
+
+
     align-items:center;
+
+
     justify-content:space-between;
+
 
     padding:80px;
 
+
     position:relative;
+
+
     overflow:hidden;
+
 
 }
 
 
 
-
 .hero-shape{
+
 
     position:absolute;
 
+
     width:500px;
+
+
     height:500px;
+
 
     background:#F7931E;
 
+
     opacity:.08;
+
 
     border-radius:50%;
 
+
     left:-200px;
+
+
     top:100px;
+
 
 }
 
@@ -153,8 +181,12 @@ nav a:hover{
 
 .hero-text{
 
+
     width:45%;
+
+
     z-index:2;
+
 
 }
 
@@ -163,35 +195,46 @@ nav a:hover{
 
 .hero-text h1{
 
+
     font-size:72px;
+
 
     line-height:1.1;
 
+
     font-weight:900;
 
-}
 
+}
 
 
 
 .hero-text h1 span{
 
+
     color:#F7931E;
 
+
 }
+
 
 
 
 
 .hero-text p{
 
+
     font-size:25px;
+
 
     color:#555;
 
+
     line-height:1.6;
 
-    margin:30px 0 40px;
+
+    margin:30px 0 25px;
+
 
 }
 
@@ -199,28 +242,216 @@ nav a:hover{
 
 
 
-.cta{
 
-    background:#F7931E;
+/* =========================
+ SEARCH BAR
+========================= */
 
-    color:white;
 
-    border:none;
+.search-box{
 
-    padding:18px 45px;
+
+    width:100%;
+
+
+    max-width:520px;
+
+
+    height:65px;
+
+
+    background:white;
+
 
     border-radius:20px;
 
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    padding:0 25px;
+
+
+    gap:15px;
+
+
+    box-shadow:
+
+
+    0 20px 50px rgba(6,28,70,.12);
+
+
+    margin-bottom:20px;
+
+
+    border:1px solid rgba(6,28,70,.05);
+
+
+}
+
+
+
+
+.search-icon{
+
+
+    font-size:25px;
+
+
+}
+
+
+
+
+.search-box input{
+
+
+    border:none;
+
+
+    outline:none;
+
+
+    width:100%;
+
+
+    background:transparent;
+
+
     font-size:22px;
 
-    font-weight:700;
+
+    color:#061C46;
+
+
+    font-weight:500;
+
+
+}
+
+
+
+
+/* =========================
+ SEARCH TAGS
+========================= */
+
+
+.popular-tags{
+
+
+    display:flex;
+
+
+    flex-wrap:wrap;
+
+
+    gap:12px;
+
+
+    margin-bottom:35px;
+
+
+}
+
+
+
+.popular-tags span{
+
+
+    background:white;
+
+
+    padding:8px 18px;
+
+
+    border-radius:30px;
+
+
+    font-size:16px;
+
+
+    color:#061C46;
+
+
+    box-shadow:
+
+
+    0 10px 25px rgba(0,0,0,.08);
+
+
+    transition:.3s;
+
 
     cursor:pointer;
 
+
+}
+
+
+
+.popular-tags span:hover{
+
+
+    transform:translateY(-5px);
+
+
+    background:#F7931E;
+
+
+    color:white;
+
+
+}
+
+
+
+
+
+
+/* =========================
+ BUTTON
+========================= */
+
+
+.cta{
+
+
+    background:#F7931E;
+
+
+    color:white;
+
+
+    border:none;
+
+
+    padding:18px 45px;
+
+
+    border-radius:20px;
+
+
+    font-size:22px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
     box-shadow:
+
+
     0 20px 45px rgba(247,147,30,.35);
 
+
     transition:.3s;
+
 
 }
 
@@ -228,10 +459,15 @@ nav a:hover{
 
 .cta:hover{
 
+
     transform:translateY(-6px);
 
+
     box-shadow:
+
+
     0 30px 60px rgba(247,147,30,.45);
+
 
 }
 
@@ -241,43 +477,57 @@ nav a:hover{
 
 
 /* =========================
- Hero Image
+ HERO IMAGE
 ========================= */
 
 
 .hero-image{
 
+
     width:45%;
+
 
     position:relative;
 
-}
 
+}
 
 
 
 .hero-image img{
 
+
     width:100%;
+
 
     border-radius:45px;
 
+
     box-shadow:
+
+
     0 40px 90px rgba(6,28,70,.2);
 
+
     animation:float 8s infinite ease-in-out;
+
 
 }
 
 
 
+
 @keyframes float{
+
 
     50%{
 
+
         transform:translateY(-20px);
 
+
     }
+
 
 }
 
@@ -286,7 +536,7 @@ nav a:hover{
 
 
 /* =========================
- Floating Cards
+ FLOATING CARDS
 ========================= */
 
 
@@ -295,14 +545,18 @@ nav a:hover{
 
     position:absolute;
 
+
     bottom:40px;
+
 
     left:-45px;
 
 
     background:white;
 
+
     padding:25px;
+
 
     width:230px;
 
@@ -311,26 +565,36 @@ nav a:hover{
 
 
     box-shadow:
+
+
     0 25px 70px rgba(0,0,0,.15);
 
 
     animation:cardFloat 4s infinite;
 
+
 }
+
 
 
 
 .status{
 
+
     display:flex;
+
 
     align-items:center;
 
+
     gap:10px;
+
 
     font-weight:bold;
 
+
     margin-bottom:10px;
+
 
 }
 
@@ -338,52 +602,50 @@ nav a:hover{
 
 .status span{
 
+
     width:12px;
+
 
     height:12px;
 
+
     background:#23c55e;
+
 
     border-radius:50%;
 
+
     box-shadow:0 0 15px #23c55e;
+
 
 }
 
 
 
-.food-card{
 
+.food-card{
 
     position:absolute;
 
-    top:40px;
-
-    right:-40px;
-
+    top:-25px;
+    left:-45px;
 
     display:flex;
-
     align-items:center;
-
     gap:15px;
-
 
     background:white;
 
+    padding:18px 24px;
 
-    padding:20px 25px;
-
-
-    border-radius:25px;
-
+    border-radius:22px;
 
     box-shadow:
-
-    0 25px 70px rgba(0,0,0,.12);
-
+    0 20px 55px rgba(0,0,0,.12);
 
     animation:cardFloat 5s infinite;
+
+    z-index:10;
 
 }
 
@@ -392,7 +654,9 @@ nav a:hover{
 
 .food-icon{
 
-    font-size:35px;
+
+    font-size:28px;
+
 
 }
 
@@ -400,7 +664,9 @@ nav a:hover{
 
 .food-card strong{
 
-    font-size:30px;
+
+    font-size:28px;
+
 
 }
 
@@ -408,20 +674,17 @@ nav a:hover{
 
 @keyframes cardFloat{
 
+
     50%{
+
 
         transform:translateY(-15px);
 
+
     }
 
+
 }
-
-
-
-
-
-
-
 
 /* =========================
  WHY BITEGO
@@ -472,23 +735,29 @@ nav a:hover{
 
 
 
+
 .why-card{
 
 
     background:white;
 
+
     width:330px;
 
+
     padding:40px;
+
 
     border-radius:30px;
 
 
     box-shadow:
+
     0 20px 60px rgba(0,0,0,.08);
 
 
     transition:.35s;
+
 
 }
 
@@ -496,41 +765,54 @@ nav a:hover{
 
 .why-card:hover{
 
+
     transform:translateY(-12px);
 
+
 }
+
+
 
 
 
 .why-icon{
 
+
     font-size:55px;
+
 
     margin-bottom:20px;
 
+
 }
+
 
 
 
 .why-card h3{
 
+
     font-size:28px;
+
 
     margin-bottom:15px;
 
+
 }
+
 
 
 
 .why-card p{
 
+
     color:#666;
+
 
     font-size:18px;
 
+
 }
-
-
 
 
 
@@ -544,15 +826,22 @@ nav a:hover{
 
 .features{
 
+
     display:flex;
+
 
     justify-content:center;
 
+
     gap:40px;
+
 
     padding:80px;
 
+
 }
+
+
 
 
 
@@ -561,47 +850,99 @@ nav a:hover{
 
     background:white;
 
+
     width:330px;
+
 
     padding:45px 35px;
 
+
     border-radius:30px;
+
 
     text-align:center;
 
 
     box-shadow:
 
+
     0 20px 60px rgba(0,0,0,.08);
 
 
     transition:.35s;
 
+
 }
+
 
 
 
 .card:hover{
 
+
     transform:translateY(-12px);
 
+
 }
+
+
 
 
 
 .icon svg{
 
+
     width:55px;
+
 
     height:55px;
 
+
     stroke:#F7931E;
+
 
     fill:none;
 
+
     stroke-width:2;
 
+
 }
+
+
+
+
+
+.card h2{
+
+
+    margin:25px 0 15px;
+
+
+    font-size:28px;
+
+
+}
+
+
+
+
+
+.card p{
+
+
+    color:#666;
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
 
 /* =========================
  HOW IT WORKS
@@ -610,45 +951,61 @@ nav a:hover{
 
 .how{
 
+
     padding:100px 80px;
+
 
     text-align:center;
 
+
 }
+
+
 
 
 
 .how h2{
 
+
     font-size:45px;
+
 
     margin-bottom:70px;
 
+
 }
+
+
 
 
 
 .steps{
 
+
     display:flex;
+
 
     justify-content:center;
 
+
     gap:100px;
 
+
 }
+
+
 
 
 
 .steps div{
 
+
     width:250px;
 
-    opacity:1;
-
-    transform:none;
 
 }
+
+
 
 
 
@@ -656,6 +1013,7 @@ nav a:hover{
 
 
     width:80px;
+
 
     height:80px;
 
@@ -665,7 +1023,9 @@ nav a:hover{
 
     display:flex;
 
+
     align-items:center;
+
 
     justify-content:center;
 
@@ -683,9 +1043,15 @@ nav a:hover{
 
 
     box-shadow:
+
+
     0 15px 35px rgba(6,28,70,.25);
 
+
 }
+
+
+
 
 
 
@@ -700,7 +1066,10 @@ nav a:hover{
 
     color:#061C46;
 
+
 }
+
+
 
 
 
@@ -718,6 +1087,7 @@ nav a:hover{
 
     line-height:1.6;
 
+
 }
 
 
@@ -729,6 +1099,7 @@ nav a:hover{
 /* =========================
  LOGIN MODAL
 ========================= */
+
 
 
 .modal{
@@ -745,6 +1116,7 @@ nav a:hover{
 
     background:
 
+
     rgba(6,28,70,.65);
 
 
@@ -759,7 +1131,10 @@ nav a:hover{
 
     z-index:2000;
 
+
 }
+
+
 
 
 
@@ -787,32 +1162,42 @@ nav a:hover{
 
     box-shadow:
 
+
     0 40px 100px rgba(0,0,0,.25);
 
 
     animation:popup .35s ease;
 
+
 }
+
 
 
 
 
 .login-box h2{
 
+
     font-size:38px;
 
+
 }
+
 
 
 
 
 .login-box p{
 
+
     color:#666;
+
 
     margin:15px 0 30px;
 
+
 }
+
 
 
 
@@ -837,7 +1222,9 @@ nav a:hover{
 
     font-size:18px;
 
+
 }
+
 
 
 
@@ -876,6 +1263,8 @@ nav a:hover{
 
 
 
+
+
 .login-box .close{
 
 
@@ -911,7 +1300,9 @@ nav a:hover{
 
     transition:.3s;
 
+
 }
+
 
 
 
@@ -924,7 +1315,10 @@ nav a:hover{
 
     transform:rotate(90deg);
 
+
 }
+
+
 
 
 
@@ -946,6 +1340,7 @@ nav a:hover{
 
 
 
+
 @keyframes popup{
 
 
@@ -956,6 +1351,7 @@ nav a:hover{
 
 
         transform:scale(.85);
+
 
     }
 
@@ -969,18 +1365,13 @@ nav a:hover{
 
         transform:scale(1);
 
+
     }
 
 
 }
 
-
-
-
-
-
-
-
+ 
 /* =========================
  SUCCESS PAGE
 ========================= */
@@ -1003,8 +1394,8 @@ nav a:hover{
 
     background:#FFFAF5;
 
-}
 
+}
 
 
 
@@ -1029,7 +1420,42 @@ nav a:hover{
     0 30px 90px rgba(0,0,0,.15);
 
 
+    max-width:500px;
+
+
 }
+
+
+
+
+.error-card h1{
+
+
+    margin:25px 0;
+
+
+    font-size:38px;
+
+
+}
+
+
+
+
+.error-card p{
+
+
+    color:#666;
+
+
+    font-size:20px;
+
+
+    line-height:1.7;
+
+
+}
+
 
 
 
@@ -1069,11 +1495,11 @@ nav a:hover{
 
     box-shadow:
 
+
     0 15px 40px rgba(35,197,94,.35);
 
 
 }
-
 
 
 
@@ -1093,13 +1519,192 @@ footer{
     color:white;
 
 
-    padding:50px;
+    padding:60px 80px;
+
+
+}
+
+
+
+
+.footer-content{
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+    max-width:1100px;
+
+
+    margin:auto;
+
+
+    gap:40px;
+
+
+}
+
+
+
+
+
+.footer-logo{
+
+
+    font-size:40px;
+
+
+    font-weight:900;
+
+
+}
+
+
+
+
+
+.footer-content p{
+
+
+    color:#ddd;
+
+
+    font-size:18px;
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+
+
+.footer-contact{
+
+
+    text-align:right;
+
+
+}
+
+
+
+
+
+.footer-contact h3{
+
+
+    font-size:28px;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.footer-contact p{
+
+
+    color:white;
+
+
+    margin:10px 0;
+
+
+}
+
+
+
+
+
+.footer-contact a{
+
+
+    display:inline-block;
+
+
+    margin-top:15px;
+
+
+    padding:12px 25px;
+
+
+    border-radius:20px;
+
+
+    background:#F7931E;
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    font-weight:bold;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+
+.footer-contact a:hover{
+
+
+    transform:translateY(-5px);
+
+
+}
+
+
+
+
+footer hr{
+
+
+    border:none;
+
+
+    height:1px;
+
+
+    background:rgba(255,255,255,.2);
+
+
+    margin:40px 0 25px;
+
+
+}
+
+
+
+
+.copyright{
 
 
     text-align:center;
 
 
-    font-size:25px;
+    color:#aaa;
+
+
+    font-size:15px;
 
 
 }
@@ -1110,7 +1715,7 @@ footer{
 
 
 /* =========================
- SCROLL ANIMATION FIX
+ SCROLL ANIMATION
 ========================= */
 
 
@@ -1127,19 +1732,19 @@ footer{
 
     transition:.8s ease;
 
+
 }
 
 
 
-.card.show,
-.steps div.show,
-.why-card.show{
+
+.show{
 
 
     opacity:1;
 
 
-    transform:translateY(0);
+    transform:none;
 
 
 }
@@ -1170,11 +1775,25 @@ header{
 
 
 
+.logo{
+
+
+    font-size:34px;
+
+
+}
+
+
+
 nav{
 
+    display:flex;
 
-    display:none;
+    gap:15px;
 
+    flex-wrap:wrap;
+
+    justify-content:left;
 
 }
 
@@ -1220,6 +1839,8 @@ nav{
 
 
 
+
+
 .hero-text p{
 
 
@@ -1231,27 +1852,63 @@ nav{
 
 
 
+
+.search-box{
+
+
+    max-width:100%;
+
+
+    margin:auto;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+
+.popular-tags{
+
+
+    justify-content:center;
+
+
+}
+
+
+
+
+.hero-image{
+
+
+    margin-top:50px;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+.food-card,
 .delivery-card{
 
+    transform:scale(.75);
 
-    left:0;
-
-
-    bottom:20px;
+    animation:none;
 
 
 }
 
-
-
-
-.food-card{
-
-
-    right:0;
-
-
-}
 
 
 
@@ -1271,6 +1928,7 @@ nav{
 
 
 
+
 .card,
 .why-card{
 
@@ -1283,16 +1941,46 @@ nav{
 
 
 
-.steps{
+
+.how{
 
 
-    flex-direction:column;
-
-
-    gap:50px;
+    padding:70px 25px;
 
 
 }
+
+
+
+
+
+.steps{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+.steps div{
+
+    width:100%;
+
+    max-width:320px;
+
+    margin:0 auto;
+
+    padding:0 20px;
+
+    text-align:center;
+
+}
+
+
 
 
 
@@ -1303,6 +1991,43 @@ nav{
 
 
     padding:35px;
+
+
+}
+
+
+
+
+
+.footer-content{
+
+
+    flex-direction:column;
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+
+.footer-contact{
+
+
+    text-align:center;
+
+
+}
+
+
+
+footer{
+
+
+    padding:50px 25px;
 
 
 }
