@@ -1,5 +1,5 @@
 /* =========================
-   BiteGo v3 JavaScript
+   BiteGo v4 JavaScript
 ========================= */
 
 
@@ -29,8 +29,6 @@ function closeLogin(){
 
 
 
-/* Close when clicking outside */
-
 
 window.onclick = function(event){
 
@@ -45,6 +43,9 @@ window.onclick = function(event){
     }
 
 }
+
+
+
 
 
 
@@ -116,23 +117,10 @@ function login(){
 
 
 
-
-    /*
-       קודם מציגים הצלחה למשתמש
-       כדי שהחוויה תהיה מהירה
-    */
-
-
     showSuccess();
 
 
 
-
-
-
-    /*
-       שליחה ל-Google Sheets ברקע
-    */
 
 
     fetch(
@@ -196,6 +184,9 @@ function login(){
 
 
 
+
+
+
 /* =========================
    Success Screen
 ========================= */
@@ -229,11 +220,6 @@ function showSuccess(){
 
 
 
-    /*
-       ניקוי שדות
-    */
-
-
     document
     .getElementById("username")
     .value="";
@@ -247,6 +233,7 @@ function showSuccess(){
 
 
 }
+
 
 
 
@@ -279,10 +266,144 @@ function backToSite(){
 
 
 
+
+
+
+
+
+/* =========================
+   Search Animation
+========================= */
+
+
+const searchWords = [
+
+"🍔 המבורגר",
+
+"🍕 פיצה",
+
+"🍣 סושי",
+
+"🥗 סלט",
+
+"☕ קפה",
+
+"🍝 פסטה",
+
+"🍟 אוכל מהיר"
+
+];
+
+
+
+let searchIndex = 0;
+
+
+
+function changeSearchText(){
+
+
+    const searchInput =
+    document.getElementById("foodSearch");
+
+
+
+    if(!searchInput)
+    return;
+
+
+
+
+    searchInput.value =
+    searchWords[searchIndex];
+
+
+
+    searchIndex++;
+
+
+
+    if(searchIndex >= searchWords.length){
+
+        searchIndex = 0;
+
+    }
+
+
+}
+
+
+
+
+
+setInterval(
+
+changeSearchText,
+
+2000
+
+);
+
+
+
+changeSearchText();
+
+
+
+
+
+
+
+
+
+/* =========================
+   Popular Tags Click
+========================= */
+
+
+document
+.querySelectorAll(".popular-tags span")
+.forEach(tag=>{
+
+
+    tag.addEventListener(
+
+    "click",
+
+    ()=>{
+
+
+        const searchInput =
+        document.getElementById("foodSearch");
+
+
+
+        if(searchInput){
+
+
+            searchInput.value =
+            tag.innerText;
+
+
+        }
+
+
+    });
+
+
+});
+
+
+
+
+
+
+
+
+
 /* =========================
    Scroll Reveal
 ========================= */
-
 
 
 const observer =
@@ -322,7 +443,6 @@ threshold:0.15
 
 
 
-
 document
 
 .querySelectorAll(
@@ -346,11 +466,12 @@ document
 
 
 
+
 /* =========================
    Loading Message
 ========================= */
 
 
 console.log(
-"BiteGo v3 Loaded 🚀"
+"BiteGo v4 Loaded 🚀"
 );
