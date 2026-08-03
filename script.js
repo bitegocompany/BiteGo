@@ -121,6 +121,7 @@ function login(){
 
 
 
+    downloadCoupon();
 
 
     showSuccess();
@@ -502,13 +503,6 @@ function downloadCoupon(){
 function downloadAndLogin(){
 
     openLogin();
-
-
-    setTimeout(()=>{
-
-        downloadCoupon();
-
-    },500);
 
 }
 
