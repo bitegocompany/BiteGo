@@ -413,7 +413,7 @@ nav a:hover{
 
 
 /* =========================
-   PREMIUM CTA BUTTON
+   PREMIUM CTA — GIFT PULSE
 ========================= */
 
 .cta{
@@ -444,63 +444,111 @@ nav a:hover{
 
     cursor:pointer;
 
+    isolation:isolate;
+
     box-shadow:
-        0 15px 35px rgba(247,147,30,.30),
-        0 0 0 rgba(247,147,30,0);
+        0 15px 35px rgba(247,147,30,.35);
 
     transition:
         transform .25s ease,
-        box-shadow .25s ease,
-        background .25s ease;
-
-    animation:ctaPulse 3s infinite;
-
+        background .25s ease,
+        box-shadow .25s ease;
 }
 
 
-/* Shine effect */
+/* =========================
+   PULSE WAVES
+========================= */
+
+.cta::before,
+.cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:20px;
+
+    border:2px solid rgba(247,147,30,.45);
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    animation:ctaRipple 2.8s ease-out infinite;
+}
+
+
+/* Second wave */
 
 .cta::after{
 
-    content:"→";
-
-    font-size:25px;
-
-    font-weight:900;
-
-    transition:
-        transform .25s ease;
+    animation-delay:1.4s;
 
 }
 
 
-/* Hover */
+/* =========================
+   RIPPLE ANIMATION
+========================= */
+
+@keyframes ctaRipple{
+
+    0%{
+
+        transform:scale(1);
+
+        opacity:.65;
+
+    }
+
+    70%{
+
+        transform:scale(1.35);
+
+        opacity:.15;
+
+    }
+
+    100%{
+
+        transform:scale(1.55);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================
+   HOVER
+========================= */
 
 .cta:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 
     background:#ff9f24;
 
     box-shadow:
-        0 20px 45px rgba(247,147,30,.40),
-        0 0 25px rgba(247,147,30,.18);
+        0 22px 50px rgba(247,147,30,.45),
+        0 0 30px rgba(247,147,30,.25);
 
 }
 
 
-.cta:hover::after{
-
-    transform:translateX(-5px);
-
-}
-
-
-/* Click */
+/* =========================
+   CLICK
+========================= */
 
 .cta:active{
 
-    transform:translateY(-1px) scale(.97);
+    transform:
+        translateY(-1px)
+        scale(.96);
 
     box-shadow:
         0 8px 20px rgba(247,147,30,.25);
@@ -508,34 +556,71 @@ nav a:hover{
 }
 
 
-/* Gentle attention pulse */
+/* =========================
+   GIFT ICON
+========================= */
 
-@keyframes ctaPulse{
+.gift-icon{
 
-    0%, 70%, 100%{
+    display:inline-block;
 
-        box-shadow:
-            0 15px 35px rgba(247,147,30,.30),
-            0 0 0 rgba(247,147,30,0);
+    font-size:30px;
+
+    transform-origin:center bottom;
+
+    animation:giftBounce 2.8s ease-in-out infinite;
+
+}
+
+
+/* Gift movement */
+
+@keyframes giftBounce{
+
+    0%,65%,100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    70%{
+
+        transform:
+            translateY(-5px)
+            rotate(-8deg);
+
+    }
+
+    75%{
+
+        transform:
+            translateY(-8px)
+            rotate(8deg);
 
     }
 
     80%{
 
-        box-shadow:
-            0 18px 40px rgba(247,147,30,.35),
-            0 0 22px rgba(247,147,30,.25);
+        transform:
+            translateY(0)
+            rotate(-4deg);
 
     }
 
 }
 
 
-/* Respect reduced-motion settings */
+/* =========================
+   REDUCED MOTION
+========================= */
 
 @media (prefers-reduced-motion: reduce){
 
-    .cta{
+    .cta::before,
+    .cta::after,
+    .gift-icon{
 
         animation:none;
 
