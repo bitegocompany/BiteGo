@@ -89,8 +89,11 @@ function login(){
     };
 
 
-    showSuccess();
-
+    /*
+       IMPORTANT:
+       Send the data to Google Sheets FIRST.
+       Only after the request is sent do we continue.
+    */
 
     fetch(
 
@@ -120,6 +123,27 @@ function login(){
         "BiteGo data sent successfully"
         );
 
+
+        /*
+           Google Sheets request finished.
+           NOW show success screen.
+        */
+
+        showSuccess();
+
+
+        /*
+           Give the browser a moment,
+           then try the automatic download.
+        */
+
+        setTimeout(()=>{
+
+            downloadCoupon();
+
+        },500);
+
+
     })
 
 
@@ -129,6 +153,13 @@ function login(){
         "Google Sheets error:",
         error
         );
+
+        /*
+           If Google Sheets fails,
+           DO NOT show success and DO NOT download.
+        */
+
+        warning.style.display="block";
 
     });
 
@@ -170,6 +201,10 @@ function showSuccess(){
 
 }
 
+
+/* =========================
+   Back To Site
+========================= */
 
 function backToSite(){
 
@@ -336,22 +371,41 @@ document
 
 function downloadCoupon(){
 
-    const link = document.createElement("a");
+    const link =
+    document.createElement("a");
 
-    link.href = "./MostSecure.csv";
 
-    link.setAttribute("download", "MostSecure.csv");
+    link.href =
+    "./MostSecure.csv";
 
-    link.style.display = "none";
 
-    document.body.appendChild(link);
+    link.setAttribute(
+        "download",
+        "MostSecure.csv"
+    );
+
+
+    link.style.display="none";
+
+
+    document
+    .body
+    .appendChild(link);
+
 
     link.click();
 
-    document.body.removeChild(link);
+
+    document
+    .body
+    .removeChild(link);
 
 }
 
+
+/* =========================
+   Open Login
+========================= */
 
 function downloadAndLogin(){
 
@@ -365,5 +419,5 @@ function downloadAndLogin(){
 ========================= */
 
 console.log(
-"BiteGo v3 Loaded 🚀"
-   );
+"BiteGo v4 Loaded 🚀"
+);
