@@ -413,15 +413,10 @@ nav a:hover{
 
 
 /* =========================
- BUTTON
+   PREMIUM CTA BUTTON
 ========================= */
 
-
-/* =========================
-   PREMIUM GIFT CTA
-========================= */
-
-.cta.gift-cta{
+.cta{
 
     position:relative;
 
@@ -431,7 +426,7 @@ nav a:hover{
 
     justify-content:center;
 
-    gap:14px;
+    gap:12px;
 
     background:#F7931E;
 
@@ -439,212 +434,114 @@ nav a:hover{
 
     border:none;
 
-    padding:18px 32px;
+    padding:18px 38px;
 
-    border-radius:22px;
+    border-radius:20px;
 
     font-size:22px;
 
-    font-weight:900;
+    font-weight:700;
 
     cursor:pointer;
 
     box-shadow:
-        0 18px 45px rgba(247,147,30,.35);
+        0 15px 35px rgba(247,147,30,.30),
+        0 0 0 rgba(247,147,30,0);
 
     transition:
         transform .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        background .25s ease;
 
-    animation:giftButtonPulse 4s infinite;
+    animation:ctaPulse 3s infinite;
 
 }
 
 
-/* 🎁 */
+/* Shine effect */
 
-.gift-icon{
+.cta::after{
 
-    display:inline-block;
+    content:"→";
 
-    font-size:30px;
+    font-size:25px;
 
-    line-height:1;
+    font-weight:900;
 
-    transform-origin:center bottom;
-
-    animation:giftWiggle 2.8s ease-in-out infinite;
+    transition:
+        transform .25s ease;
 
 }
 
 
 /* Hover */
 
-.cta.gift-cta:hover{
+.cta:hover{
 
-    transform:translateY(-6px) scale(1.03);
+    transform:translateY(-5px);
+
+    background:#ff9f24;
 
     box-shadow:
-        0 25px 60px rgba(247,147,30,.50),
-        0 0 30px rgba(247,147,30,.25);
+        0 20px 45px rgba(247,147,30,.40),
+        0 0 25px rgba(247,147,30,.18);
 
 }
 
 
-/* המתנה מתלהבת כשעוברים על הכפתור */
+.cta:hover::after{
 
-.cta.gift-cta:hover .gift-icon{
-
-    animation:giftExcited .6s ease-in-out infinite;
+    transform:translateX(-5px);
 
 }
 
 
-/* לחיצה */
+/* Click */
 
-.cta.gift-cta:active{
+.cta:active{
 
-    transform:scale(.96);
+    transform:translateY(-1px) scale(.97);
+
+    box-shadow:
+        0 8px 20px rgba(247,147,30,.25);
 
 }
 
 
-/* =========================
-   GIFT ANIMATIONS
-========================= */
+/* Gentle attention pulse */
 
-@keyframes giftWiggle{
+@keyframes ctaPulse{
 
     0%, 70%, 100%{
 
-        transform:
-            rotate(0deg)
-            translateY(0);
-
-    }
-
-    75%{
-
-        transform:
-            rotate(-10deg)
-            translateY(-3px);
+        box-shadow:
+            0 15px 35px rgba(247,147,30,.30),
+            0 0 0 rgba(247,147,30,0);
 
     }
 
     80%{
 
-        transform:
-            rotate(10deg)
-            translateY(-5px);
-
-    }
-
-    85%{
-
-        transform:
-            rotate(-7deg)
-            translateY(-2px);
-
-    }
-
-    90%{
-
-        transform:
-            rotate(5deg)
-            translateY(0);
-
-    }
-
-}
-
-
-/* Hover animation */
-
-@keyframes giftExcited{
-
-    0%{
-
-        transform:rotate(0deg) scale(1);
-
-    }
-
-    25%{
-
-        transform:rotate(-15deg) scale(1.15);
-
-    }
-
-    50%{
-
-        transform:rotate(15deg) scale(1.2);
-
-    }
-
-    75%{
-
-        transform:rotate(-10deg) scale(1.15);
-
-    }
-
-    100%{
-
-        transform:rotate(0deg) scale(1);
-
-    }
-
-}
-
-
-/* Button glow */
-
-@keyframes giftButtonPulse{
-
-    0%, 75%, 100%{
-
         box-shadow:
-            0 18px 45px rgba(247,147,30,.35);
-
-    }
-
-    82%{
-
-        box-shadow:
-            0 20px 50px rgba(247,147,30,.50),
-            0 0 25px rgba(247,147,30,.25);
+            0 18px 40px rgba(247,147,30,.35),
+            0 0 22px rgba(247,147,30,.25);
 
     }
 
 }
 
 
-/* Accessibility */
+/* Respect reduced-motion settings */
 
 @media (prefers-reduced-motion: reduce){
 
-    .cta.gift-cta,
-    .gift-icon{
+    .cta{
 
         animation:none;
 
     }
 
 }
-
-
-.cta:hover{
-
-
-    transform:translateY(-6px);
-
-
-    box-shadow:
-
-
-    0 30px 60px rgba(247,147,30,.45);
-
-
-}
-
 
 
 
