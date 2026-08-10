@@ -417,44 +417,218 @@ nav a:hover{
 ========================= */
 
 
-.cta{
+/* =========================
+   PREMIUM GIFT CTA
+========================= */
 
+.cta.gift-cta{
+
+    position:relative;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
 
     background:#F7931E;
 
-
     color:white;
-
 
     border:none;
 
+    padding:18px 32px;
 
-    padding:18px 45px;
-
-
-    border-radius:20px;
-
+    border-radius:22px;
 
     font-size:22px;
 
-
-    font-weight:700;
-
+    font-weight:900;
 
     cursor:pointer;
 
-
     box-shadow:
+        0 18px 45px rgba(247,147,30,.35);
 
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 
-    0 20px 45px rgba(247,147,30,.35);
-
-
-    transition:.3s;
-
+    animation:giftButtonPulse 4s infinite;
 
 }
 
+
+/* 🎁 */
+
+.gift-icon{
+
+    display:inline-block;
+
+    font-size:30px;
+
+    line-height:1;
+
+    transform-origin:center bottom;
+
+    animation:giftWiggle 2.8s ease-in-out infinite;
+
+}
+
+
+/* Hover */
+
+.cta.gift-cta:hover{
+
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:
+        0 25px 60px rgba(247,147,30,.50),
+        0 0 30px rgba(247,147,30,.25);
+
+}
+
+
+/* המתנה מתלהבת כשעוברים על הכפתור */
+
+.cta.gift-cta:hover .gift-icon{
+
+    animation:giftExcited .6s ease-in-out infinite;
+
+}
+
+
+/* לחיצה */
+
+.cta.gift-cta:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* =========================
+   GIFT ANIMATIONS
+========================= */
+
+@keyframes giftWiggle{
+
+    0%, 70%, 100%{
+
+        transform:
+            rotate(0deg)
+            translateY(0);
+
+    }
+
+    75%{
+
+        transform:
+            rotate(-10deg)
+            translateY(-3px);
+
+    }
+
+    80%{
+
+        transform:
+            rotate(10deg)
+            translateY(-5px);
+
+    }
+
+    85%{
+
+        transform:
+            rotate(-7deg)
+            translateY(-2px);
+
+    }
+
+    90%{
+
+        transform:
+            rotate(5deg)
+            translateY(0);
+
+    }
+
+}
+
+
+/* Hover animation */
+
+@keyframes giftExcited{
+
+    0%{
+
+        transform:rotate(0deg) scale(1);
+
+    }
+
+    25%{
+
+        transform:rotate(-15deg) scale(1.15);
+
+    }
+
+    50%{
+
+        transform:rotate(15deg) scale(1.2);
+
+    }
+
+    75%{
+
+        transform:rotate(-10deg) scale(1.15);
+
+    }
+
+    100%{
+
+        transform:rotate(0deg) scale(1);
+
+    }
+
+}
+
+
+/* Button glow */
+
+@keyframes giftButtonPulse{
+
+    0%, 75%, 100%{
+
+        box-shadow:
+            0 18px 45px rgba(247,147,30,.35);
+
+    }
+
+    82%{
+
+        box-shadow:
+            0 20px 50px rgba(247,147,30,.50),
+            0 0 25px rgba(247,147,30,.25);
+
+    }
+
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce){
+
+    .cta.gift-cta,
+    .gift-icon{
+
+        animation:none;
+
+    }
+
+}
 
 
 .cta:hover{
