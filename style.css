@@ -411,66 +411,530 @@ nav a:hover{
 
 
 
-
-/* =========================
- BUTTON
-========================= */
-
+/* =========================================
+   🎁 BITEGO PREMIUM GIFT CTA
+========================================= */
 
 .cta{
+    position:relative;
 
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    min-width:270px;
+    min-height:64px;
+
+    padding:18px 38px;
 
     background:#F7931E;
-
-
     color:white;
 
-
     border:none;
-
-
-    padding:18px 45px;
-
-
     border-radius:20px;
 
-
     font-size:22px;
-
-
-    font-weight:700;
-
+    font-weight:800;
 
     cursor:pointer;
 
+    overflow:visible;
+    isolation:isolate;
 
     box-shadow:
+        0 15px 35px rgba(247,147,30,.35);
 
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
 
-    0 20px 45px rgba(247,147,30,.35);
-
-
-    transition:.3s;
-
-
+    animation:
+        ctaAttention 4s ease-in-out infinite;
 }
 
 
+/* =========================================
+   🌊 OUTER PULSE #1
+========================================= */
+
+.cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+    height:100%;
+
+    border-radius:22px;
+
+    background:rgba(247,147,30,.35);
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    opacity:0;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    animation:
+        ctaPulse 2.8s ease-out infinite;
+}
+
+
+/* =========================================
+   🌊 OUTER PULSE #2
+========================================= */
+
+.cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:100%;
+    height:100%;
+
+    border-radius:22px;
+
+    border:3px solid rgba(247,147,30,.45);
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    opacity:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+
+    animation:
+        ctaRing 2.8s ease-out infinite;
+
+    animation-delay:1.4s;
+}
+
+
+/* =========================================
+   🌊 PULSE ANIMATION
+========================================= */
+
+@keyframes ctaPulse{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+        opacity:.55;
+    }
+
+    65%{
+
+        opacity:.18;
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.65);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   🌊 RING ANIMATION
+========================================= */
+
+@keyframes ctaRing{
+
+    0%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1);
+
+        opacity:.65;
+    }
+
+    65%{
+
+        opacity:.20;
+    }
+
+    100%{
+
+        transform:
+            translate(-50%,-50%)
+            scale(1.75);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   ✨ BUTTON ATTENTION
+========================================= */
+
+@keyframes ctaAttention{
+
+    0%,
+    68%,
+    100%{
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        box-shadow:
+            0 15px 35px rgba(247,147,30,.35);
+    }
+
+    72%{
+
+        transform:
+            translateY(-5px)
+            scale(1.035);
+
+        box-shadow:
+            0 22px 50px rgba(247,147,30,.50),
+            0 0 30px rgba(247,147,30,.35);
+    }
+
+    76%{
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        box-shadow:
+            0 18px 42px rgba(247,147,30,.40),
+            0 0 18px rgba(247,147,30,.20);
+    }
+}
+
+
+/* =========================================
+   🎁 GIFT ICON
+========================================= */
+
+.cta .gift-icon{
+
+    display:inline-block;
+
+    font-size:30px;
+
+    line-height:1;
+
+    transform-origin:center bottom;
+
+    animation:
+        giftBounce 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   🎁 GIFT MOVEMENT
+========================================= */
+
+@keyframes giftBounce{
+
+    0%,
+    68%,
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+    }
+
+    72%{
+
+        transform:
+            translateY(-9px)
+            rotate(-10deg)
+            scale(1.18);
+    }
+
+    75%{
+
+        transform:
+            translateY(-4px)
+            rotate(9deg)
+            scale(1.12);
+    }
+
+    79%{
+
+        transform:
+            translateY(0)
+            rotate(-3deg)
+            scale(1);
+    }
+}
+
+
+/* =========================================
+   ✨ GIFT SPARKLES
+========================================= */
+
+.cta .gift-icon::before,
+.cta .gift-icon::after{
+
+    content:"✨";
+
+    position:absolute;
+
+    font-size:14px;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+
+/* Left sparkle */
+
+.cta .gift-icon::before{
+
+    left:-14px;
+    top:-12px;
+
+    animation:
+        sparkleLeft 4s ease-in-out infinite;
+}
+
+
+/* Right sparkle */
+
+.cta .gift-icon::after{
+
+    right:-14px;
+    top:-10px;
+
+    animation:
+        sparkleRight 4s ease-in-out infinite;
+}
+
+
+/* =========================================
+   ✨ LEFT SPARKLE
+========================================= */
+
+@keyframes sparkleLeft{
+
+    0%,
+    68%{
+
+        opacity:0;
+
+        transform:
+            translate(0,8px)
+            scale(.4)
+            rotate(0);
+    }
+
+    73%{
+
+        opacity:1;
+
+        transform:
+            translate(-7px,-5px)
+            scale(1)
+            rotate(-15deg);
+    }
+
+    80%{
+
+        opacity:0;
+
+        transform:
+            translate(-14px,-14px)
+            scale(.5)
+            rotate(20deg);
+    }
+
+    100%{
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   ✨ RIGHT SPARKLE
+========================================= */
+
+@keyframes sparkleRight{
+
+    0%,
+    68%{
+
+        opacity:0;
+
+        transform:
+            translate(0,8px)
+            scale(.4)
+            rotate(0);
+    }
+
+    73%{
+
+        opacity:1;
+
+        transform:
+            translate(7px,-6px)
+            scale(1)
+            rotate(15deg);
+    }
+
+    80%{
+
+        opacity:0;
+
+        transform:
+            translate(14px,-14px)
+            scale(.5)
+            rotate(-20deg);
+    }
+
+    100%{
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================
+   🖱️ HOVER
+========================================= */
 
 .cta:hover{
 
+    transform:
+        translateY(-7px)
+        scale(1.05);
 
-    transform:translateY(-6px);
-
+    background:#ff9f24;
 
     box-shadow:
-
-
-    0 30px 60px rgba(247,147,30,.45);
-
-
+        0 25px 60px rgba(247,147,30,.55),
+        0 0 40px rgba(247,147,30,.30);
 }
 
+
+/* Faster pulses on hover */
+
+.cta:hover::before{
+
+    animation-duration:1.3s;
+}
+
+.cta:hover::after{
+
+    animation-duration:1.3s;
+    animation-delay:.65s;
+}
+
+
+/* =========================================
+   👆 CLICK
+========================================= */
+
+.cta:active{
+
+    transform:
+        scale(.94);
+
+    box-shadow:
+        0 8px 20px rgba(247,147,30,.30);
+}
+
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media(max-width:900px){
+
+    .cta{
+
+        min-width:260px;
+        min-height:62px;
+
+        padding:17px 25px;
+
+        font-size:20px;
+
+        animation:
+            ctaAttention 4s ease-in-out infinite;
+    }
+
+    .cta .gift-icon{
+
+        font-size:29px;
+
+        animation:
+            giftBounce 4s ease-in-out infinite;
+    }
+
+    .cta::before{
+
+        width:115%;
+        height:115%;
+
+        animation:
+            ctaPulse 2.8s ease-out infinite;
+    }
+
+    .cta::after{
+
+        width:115%;
+        height:115%;
+
+        animation:
+            ctaRing 2.8s ease-out infinite;
+
+        animation-delay:1.4s;
+    }
+}
+
+
+/* =========================================
+   ♿ REDUCED MOTION
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .cta,
+    .cta::before,
+    .cta::after,
+    .cta .gift-icon,
+    .cta .gift-icon::before,
+    .cta .gift-icon::after{
+
+        animation:none;
+    }
+
+}
 
 
 
