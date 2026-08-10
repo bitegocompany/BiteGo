@@ -412,11 +412,11 @@ nav a:hover{
 
 
 
-/* =========================
-   PREMIUM CTA — GIFT PULSE
-========================= */
+/* =========================================
+   BITEGO — WOW GIFT CTA
+========================================= */
 
-.cta{
+.cta.gift-cta{
 
     position:relative;
 
@@ -426,95 +426,152 @@ nav a:hover{
 
     justify-content:center;
 
-    gap:12px;
+    gap:13px;
 
-    background:#F7931E;
+    min-width:270px;
 
-    color:white;
+    min-height:64px;
+
+    padding:18px 32px;
 
     border:none;
 
-    padding:18px 38px;
+    border-radius:22px;
 
-    border-radius:20px;
+    background:#F7931E;
+
+    color:#fff;
 
     font-size:22px;
 
-    font-weight:700;
+    font-weight:800;
 
     cursor:pointer;
 
     isolation:isolate;
 
+    overflow:visible;
+
+    z-index:5;
+
     box-shadow:
         0 15px 35px rgba(247,147,30,.35);
 
+    animation:
+        wowButton 4s ease-in-out infinite;
+
     transition:
         transform .25s ease,
-        background .25s ease,
-        box-shadow .25s ease;
+        background .25s ease;
+
 }
 
 
-/* =========================
-   PULSE WAVES
-========================= */
+/* =========================================
+   BIG LIGHT RIPPLE
+========================================= */
 
-.cta::before,
-.cta::after{
+.cta.gift-cta::before{
 
     content:"";
 
     position:absolute;
 
-    inset:0;
+    top:50%;
 
-    border-radius:20px;
+    left:50%;
 
-    border:2px solid rgba(247,147,30,.45);
+    width:100%;
+
+    height:100%;
+
+    border-radius:24px;
+
+    background:rgba(247,147,30,.18);
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    opacity:0;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+    animation:
+        lightWave 2.8s ease-out infinite;
+
+}
+
+
+/* =========================================
+   SECOND LIGHT RIPPLE
+========================================= */
+
+.cta.gift-cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:24px;
+
+    border:3px solid rgba(247,147,30,.50);
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    opacity:0;
 
     z-index:-1;
 
     pointer-events:none;
 
-    animation:ctaRipple 2.8s ease-out infinite;
-}
-
-
-/* Second wave */
-
-.cta::after{
+    animation:
+        ringWave 2.8s ease-out infinite;
 
     animation-delay:1.4s;
 
 }
 
 
-/* =========================
-   RIPPLE ANIMATION
-========================= */
+/* =========================================
+   LIGHT WAVE
+========================================= */
 
-@keyframes ctaRipple{
+@keyframes lightWave{
 
     0%{
 
-        transform:scale(1);
+        transform:
+            translate(-50%,-50%)
+            scale(1);
 
-        opacity:.65;
+        opacity:.55;
 
     }
 
-    70%{
+    60%{
 
-        transform:scale(1.35);
-
-        opacity:.15;
+        opacity:.20;
 
     }
 
     100%{
 
-        transform:scale(1.55);
+        transform:
+            translate(-50%,-50%)
+            scale(1.65);
 
         opacity:0;
 
@@ -523,81 +580,143 @@ nav a:hover{
 }
 
 
-/* =========================
-   HOVER
-========================= */
+/* =========================================
+   RING WAVE
+========================================= */
 
-.cta:hover{
+@keyframes ringWave{
 
-    transform:translateY(-6px);
+    0%{
 
-    background:#ff9f24;
+        transform:
+            translate(-50%,-50%)
+            scale(1);
 
-    box-shadow:
-        0 22px 50px rgba(247,147,30,.45),
-        0 0 30px rgba(247,147,30,.25);
+        opacity:.65;
 
-}
+    }
 
+    65%{
 
-/* =========================
-   CLICK
-========================= */
+        opacity:.25;
 
-.cta:active{
+    }
 
-    transform:
-        translateY(-1px)
-        scale(.96);
+    100%{
 
-    box-shadow:
-        0 8px 20px rgba(247,147,30,.25);
+        transform:
+            translate(-50%,-50%)
+            scale(1.75);
 
-}
+        opacity:0;
 
-
-/* =========================
-   GIFT ICON
-========================= */
-
-.gift-icon{
-
-    display:inline-block;
-
-    font-size:30px;
-
-    transform-origin:center bottom;
-
-    animation:giftBounce 2.8s ease-in-out infinite;
+    }
 
 }
 
 
-/* Gift movement */
+/* =========================================
+   BUTTON WOW MOMENT
+========================================= */
 
-@keyframes giftBounce{
+@keyframes wowButton{
 
-    0%,65%,100%{
+    0%,
+    70%,
+    100%{
 
         transform:
             translateY(0)
-            rotate(0deg);
+            scale(1);
+
+        box-shadow:
+            0 15px 35px rgba(247,147,30,.35);
 
     }
 
-    70%{
+    74%{
 
         transform:
-            translateY(-5px)
-            rotate(-8deg);
+            translateY(-4px)
+            scale(1.035);
+
+        box-shadow:
+            0 20px 50px rgba(247,147,30,.55),
+            0 0 35px rgba(247,147,30,.40);
 
     }
 
-    75%{
+    78%{
 
         transform:
-            translateY(-8px)
-            rotate(8deg);
+            translateY(0)
+            scale(1);
+
+        box-shadow:
+            0 18px 45px rgba(247,147,30,.45),
+            0 0 25px rgba(247,147,30,.25);
+
+    }
+
+}
+
+
+/* =========================================
+   🎁 GIFT
+========================================= */
+
+.gift-icon{
+
+    position:relative;
+
+    display:inline-block;
+
+    font-size:31px;
+
+    line-height:1;
+
+    z-index:2;
+
+    transform-origin:center bottom;
+
+    animation:
+        giftWow 4s ease-in-out infinite;
+
+}
+
+
+/* =========================================
+   GIFT POP
+========================================= */
+
+@keyframes giftWow{
+
+    0%,
+    68%,
+    100%{
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    72%{
+
+        transform:
+            translateY(-9px)
+            rotate(-10deg)
+            scale(1.18);
+
+    }
+
+    76%{
+
+        transform:
+            translateY(-4px)
+            rotate(10deg)
+            scale(1.12);
 
     }
 
@@ -605,22 +724,268 @@ nav a:hover{
 
         transform:
             translateY(0)
-            rotate(-4deg);
+            rotate(-4deg)
+            scale(1);
 
     }
 
 }
 
 
-/* =========================
-   REDUCED MOTION
-========================= */
+/* =========================================
+   ✨ SPARKLES
+========================================= */
 
-@media (prefers-reduced-motion: reduce){
+.gift-icon::before,
+.gift-icon::after{
 
-    .cta::before,
-    .cta::after,
+    position:absolute;
+
+    content:"✨";
+
+    font-size:15px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/* Left sparkle */
+
+.gift-icon::before{
+
+    left:-15px;
+
+    top:-13px;
+
+    animation:
+        sparkleLeft 4s ease-in-out infinite;
+
+}
+
+
+/* Right sparkle */
+
+.gift-icon::after{
+
+    right:-15px;
+
+    top:-10px;
+
+    animation:
+        sparkleRight 4s ease-in-out infinite;
+
+}
+
+
+/* =========================================
+   LEFT SPARKLE
+========================================= */
+
+@keyframes sparkleLeft{
+
+    0%,
+    68%{
+
+        opacity:0;
+
+        transform:
+            translate(0,8px)
+            scale(.5)
+            rotate(0);
+
+    }
+
+    74%{
+
+        opacity:1;
+
+        transform:
+            translate(-8px,-5px)
+            scale(1)
+            rotate(-15deg);
+
+    }
+
+    80%{
+
+        opacity:0;
+
+        transform:
+            translate(-15px,-13px)
+            scale(.5)
+            rotate(20deg);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================
+   RIGHT SPARKLE
+========================================= */
+
+@keyframes sparkleRight{
+
+    0%,
+    68%{
+
+        opacity:0;
+
+        transform:
+            translate(0,8px)
+            scale(.5)
+            rotate(0);
+
+    }
+
+    74%{
+
+        opacity:1;
+
+        transform:
+            translate(8px,-7px)
+            scale(1)
+            rotate(15deg);
+
+    }
+
+    80%{
+
+        opacity:0;
+
+        transform:
+            translate(15px,-15px)
+            scale(.5)
+            rotate(-20deg);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.cta.gift-cta:hover{
+
+    transform:
+        translateY(-7px)
+        scale(1.05);
+
+    background:#ff9f24;
+
+    box-shadow:
+        0 25px 60px rgba(247,147,30,.55),
+        0 0 45px rgba(247,147,30,.35);
+
+}
+
+
+/* =========================================
+   HOVER — MORE ENERGY
+========================================= */
+
+.cta.gift-cta:hover::before{
+
+    animation-duration:1.3s;
+
+}
+
+.cta.gift-cta:hover::after{
+
+    animation-duration:1.3s;
+
+    animation-delay:.65s;
+
+}
+
+
+/* =========================================
+   CLICK
+========================================= */
+
+.cta.gift-cta:active{
+
+    transform:
+        scale(.94);
+
+    box-shadow:
+        0 8px 20px rgba(247,147,30,.30);
+
+}
+
+
+/* =========================================
+   📱 MOBILE
+========================================= */
+
+@media(max-width:900px){
+
+    .cta.gift-cta{
+
+        min-width:260px;
+
+        min-height:62px;
+
+        padding:17px 25px;
+
+        font-size:20px;
+
+    }
+
     .gift-icon{
+
+        font-size:29px;
+
+    }
+
+    .cta.gift-cta::before{
+
+        width:110%;
+
+        height:115%;
+
+    }
+
+    .cta.gift-cta::after{
+
+        width:110%;
+
+        height:115%;
+
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .cta.gift-cta,
+    .cta.gift-cta::before,
+    .cta.gift-cta::after,
+    .gift-icon,
+    .gift-icon::before,
+    .gift-icon::after{
 
         animation:none;
 
