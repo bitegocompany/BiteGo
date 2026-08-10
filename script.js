@@ -366,5 +366,3 @@ function downloadAndLogin(){
 
 console.log(
 "BiteGo v3 Loaded 🚀"
-);
-```
